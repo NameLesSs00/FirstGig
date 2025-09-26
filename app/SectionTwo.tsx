@@ -21,7 +21,7 @@ const SectionTwo: React.FC = () => {
             <p className="text-base leading-relaxed font-light">
               An interior and décor designer with a passion for transforming
               everyday spaces into inspiring environments. For over 7 years,
-              I've worked with homeowners, entrepreneurs, and small businesses
+              I&apos;ve worked with homeowners, entrepreneurs, and small businesses
               to create interiors that blend beauty with functionality. My
               design approach is rooted in understanding people—their stories,
               lifestyles, and aspirations—and turning those into spaces that

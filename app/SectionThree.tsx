@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const SectionThree: React.FC = () => {
@@ -8,15 +9,21 @@ const SectionThree: React.FC = () => {
       {/* === Top Hero (separated) === */}
       <div className="relative h-[450px] md:h-[550px] flex items-center justify-center overflow-hidden">
         {/* Hero Background Image */}
-        <motion.img
-          src="/img2.png"
-          alt="Interior design hero"
-          className="absolute inset-0 w-full h-full object-cover"
+        <motion.div
+          className="absolute inset-0"
           initial={{ scale: 1.1, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.8, ease: "easeOut" }}
           viewport={{ once: true }}
-        />
+        >
+          <Image
+            src="/img2.png"
+            alt="Interior design hero"
+            fill
+            priority
+            className="object-cover"
+          />
+        </motion.div>
 
         {/* Subtle dark overlay */}
         <div className="absolute inset-0 bg-black/40" />
@@ -75,17 +82,18 @@ const SectionThree: React.FC = () => {
             </h2>
             <p className="text-sm text-gray-700 leading-relaxed">
               I help homeowners bring their dream interiors to life. Whether
-              it's a single room refresh or a full home makeover, I design
+              it&apos;s a single room refresh or a full home makeover, I design
               spaces that are warm, welcoming, and uniquely yours. From color
               palettes to furniture selection, every detail is carefully chosen
               to create harmony.
             </p>
           </div>
           <div className="md:w-2/5 relative h-40 md:h-full overflow-hidden md:rounded-r-xl rounded-b-xl">
-            <img
+            <Image
               src="/img3.png"
               alt="Warm interior space design example"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
         </motion.div>
@@ -111,10 +119,11 @@ const SectionThree: React.FC = () => {
             </p>
           </div>
           <div className="md:w-2/5 relative h-40 md:h-full overflow-hidden md:rounded-r-xl rounded-b-xl">
-            <img
+            <Image
               src="/img4.png"
               alt="Modern workspace with plants and desktop monitor"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
         </motion.div>

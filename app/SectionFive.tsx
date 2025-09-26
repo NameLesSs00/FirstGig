@@ -42,7 +42,7 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
 
       {/* Feedback Text */}
       <p className="text-sm text-gray-700 leading-relaxed italic">
-        "{feedback}"
+        &quot;{feedback}&quot;
       </p>
     </motion.div>
   );

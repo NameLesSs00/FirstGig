@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface ProjectCardProps {
@@ -10,18 +11,25 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ imageUrl, caption }) => {
   return (
     <motion.div
-      className="rounded-xl shadow-xl overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-2xl cursor-pointer"
+      className="rounded-xl shadow-xl overflow-hidden cursor-pointer"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
+      whileHover={{ scale: 1.03, boxShadow: "0 12px 30px rgba(0,0,0,0.3)" }}
+      whileTap={{ scale: 0.98 }}
     >
       {/* Project Image */}
-      <div className="aspect-[4/3] w-full overflow-hidden">
-        <img
+      <div className="relative aspect-[4/3] w-full">
+        <Image
           src={imageUrl}
           alt={caption}
-          className="w-full h-full object-cover transition duration-300 group-hover:opacity-90"
+          fill
+          className="object-cover transition duration-300"
+          sizes="(max-width: 768px) 100vw,
+                 (max-width: 1200px) 50vw,
+                 33vw"
+          priority={false} // you can set true for first images
         />
       </div>
 
